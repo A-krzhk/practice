@@ -10,12 +10,37 @@
     <!-- Custom scripts and styles -->
     <link rel="stylesheet" href="./style.css">
     <script defer src="./script/main.js"></script>
+    <script src="https://kit.fontawesome.com/15dbd88e06.js" crossorigin="anonymous"></script>
 
     <title>Просмотр файлов</title>
 </head>
 
-<body>
+<body class="bg-gray-50">
+    <div class="h-screen flex">
+        <div class="h-full w-80 flex flex-col p-12">
 
+            <div class="w-full flex flex-col h-1/2">
+                <a class=" black block p-3 text-xl" href="#">Главная</a>
+            </div>
+            <div class="w-full flex flex-col h-1/2">
+                <a class=" text-center block p-3 " href="#">Теги</a>
+                <a class=" block p-3 " href="#">1</a>
+            </div>
+        </div>
+        <div class="flex-1 bg-gray-100 flex flex-col p-12 shadow-lg border border-gray-200 rounded-l-3xl relative">
+            <div class="text-3xl p-2">Хранилище документов</div>
+            <div class="mt-6 h-12 w-full ">
+                <form class="text-center p-2 text-start">
+                    <input class="w-3/4 p-3 bg-gray-100 " type="text" name="text" placeholder="Поиск">
+                    <a href="#"><i class="fas fa-filter p-2"></i></a>
+                    <a href="#"><i class="fas fa-search"></i></a>
+                </form>
+            </div>
+            <div class="mt-2 h-12 w-full ">
+            </div>
+            <div class="mt-3 flex-1 overflow-hidden"></div>
+        </div>
+    </div>
 </body>
 
 </html>
