@@ -10,6 +10,7 @@
     <!-- Custom scripts and styles -->
     <link rel="stylesheet" href="./style.css">
     <script defer src="./script/main.js"></script>
+    <script src="https://kit.fontawesome.com/15dbd88e06.js" crossorigin="anonymous"></script>
 
     <title>Просмотр файлов</title>
 </head>
@@ -31,17 +32,17 @@
             </div>
         </div>
         <div class="flex-1 bg-gray-100 flex flex-col py-12 pl-6 pr-12">
-           <div class="text-3xl text-center">Хранилище документов</div>
-           <div class="mt-6 h-12 w-full ">
-            <form class="text-center p-2">
-                <input class="w-3/4" type="text" name="text" placeholder="Поиск">
-                <input class="border-2 cursor-pointer" type="submit" name="submit" value="Поиск">
-                <input class="border-2 cursor-pointer" type="button" name="filter" value="Фильтры">
-            </form>
-           </div>
-           <div class="mt-2 h-12 w-full ">
-           </div>
-           <div class="mt-3  flex-1"></div>
+            <div class="text-3xl text-start">Хранилище документов</div>
+            <div class="mt-6 h-12 w-full ">
+                <form class="text-center p-2 text-start">
+                    <input class="w-3/4" type="text" name="text" placeholder="Поиск">
+                    <a href="#"><i class="fas fa-filter"></i></a>
+                    <a href="#"><i class="fas fa-search"></i></a>
+                </form>
+            </div>
+            <div class="mt-2 h-12 w-full ">
+            </div>
+            <div class="mt-3  flex-1"></div>
         </div>
     </div>
 </body>
