@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Connected modules -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://kit.fontawesome.com/15dbd88e06.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Custom scripts and styles -->
     <link rel="stylesheet" href="./style.css">
     <script defer src="./script/main.js"></script>
@@ -36,16 +38,16 @@
                     <a href="#"><i class="fas fa-search"></i></a>
                 </form>
             </div>
-            <div class="mt-3 flex-1 overflow-y-auto">
-                <table class="border-separate border-spacing-5 w-full text-center table-content">
-                    <thead class="w-full">
-                        <tr class="text-gray-500">
-                            <th class="text-sm font-medium rounded-3xl bg-green-100 p-1 cursor-pointer">№</th>
-                            <th class="text-sm font-medium rounded-3xl bg-yellow-200 p-1 cursor-pointer">НАЗВАНИЕ</th>
-                            <th class="text-sm font-medium rounded-3xl bg-orange-200 p-1 cursor-pointer">ДАТА</th>
-                            <th class="text-sm font-medium rounded-3xl bg-red-200 p-1 cursor-pointer">РАЗМЕР</th>
-                            <th class="text-sm font-medium rounded-3xl bg-purple-200 p-1 cursor-pointer">АВТОР</th>
-                            <th class="text-sm font-medium rounded-3xl bg-blue-200 p-1 cursor-pointer">ИЗОБРАЖЕНИЯ</th>
+            <div class="rounded-3xl mt-3 flex-1 overflow-y-auto ">
+                <!--  Если убрать border-separate border-spacing-y-4 то уберется отступ над шапкой, но тогда не будет отступов у строк таблицы-->
+                <table
+                    class="border-separate border-spacing-y-4 rounded-3xl table-content bg-gray-200 w-full text-left">
+                    <thead class="w-full bg-gray-200 sticky top-0">
+                        <tr class="text-gray-800 font-black ">
+                            <th class="text-sm font-medium cursor-pointer p-3 bg-gray-300 rounded-tl-3xl">НАЗВАНИЕ</th>
+                            <th class="text-sm font-medium cursor-pointer p-3 bg-gray-300">ДАТА</th>
+                            <th class="text-sm font-medium cursor-pointer p-3 bg-gray-300">РАЗМЕР</th>
+                            <th class="text-sm font-medium cursor-pointer p-3 bg-gray-300 rounded-tr-3xl">АВТОР</th>
                         </tr>
                     </thead>
                     <tbody>
