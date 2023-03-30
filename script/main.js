@@ -1,16 +1,15 @@
 const listDocs = document.querySelector('.table-content tbody');
 
 const renderData = (data) => {
-    console.log(data)
     data.forEach((el, i) => {
         listDocs.insertAdjacentHTML('beforeend',`
-            <tr>
-                <td class="border-b-2 border-gray-200">${i+1}</td>
-                <td class="border-b-2 border-gray-200">${el.name}</td>
-                <td class="border-b-2 border-gray-200">${el.data}</td>
-                <td class="border-b-2 border-gray-200">${el.size}</td>
-                <td class="border-b-2 border-gray-200">${el.author}</td>
-                <td class="border-b-2 border-gray-200">${el.includeImg ? 'Да':'Нет'}</td>
+            <tr class="cursor-pointer hover:bg-sky-100" data-id=${el.id}>
+                <td class="rounded-3xl">${i+1}</td>
+                <td class="rounded-3xl">${el.name}</td>
+                <td class="rounded-3xl">${el.data}</td>
+                <td class="rounded-3xl">${el.size}</td>
+                <td class="rounded-3xl">${el.author}</td>
+                <td class="rounded-3xl">${el.includeImg ? 'Да':'Нет'}</td>
             </tr>
         `);
     });
