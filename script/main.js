@@ -1,14 +1,15 @@
-const listDocs = document.querySelector('.table-content tbody');
+const listDocs = document.querySelector('.list-content');
 
 const renderData = (data) => {
     data.forEach(el => {
         listDocs.insertAdjacentHTML('beforeend',`
-            <tr class="border-solid border-b-2 border-gray-300 cursor-pointer hover:bg-sky-100 " data-id=${el.id}>
-                <td class="py-1 px-4 line-clamp-3">${el.text}</td>
-                <td class="py-1 px-4">${el.data}</td>
-                <td class="flex flex-row flex-nowrap items-center gap-1 py-1 px-4">${el.size} ${el.includeImg ? '<i class="fa-regular fa-file-image text-gray-600"></i>' : ''}</td>
-                <td class="py-1 px-4">${el.author}</td>
-            </tr>
+        <div class=" flex flex-nowrap justify-between items-center gap-1 h-fit font-sm cursor-pointer text-left text-sm w-full hover:bg-sky-100">
+            <p class="min-h-fit break-words w-2/5 text-justify px-4 line-clamp-3">${el.text}</p>
+            <span class="break-words p-4 w-1/5">${el.data}</span>
+            <span class="break-words w-1/5 flex flex-row flex-nowrap items-center gap-2 p-4">${el.size} ${el.includeImg ? '<i class="text-sky-700 fa-regular fa-file-image"></i>' : ''}</span>
+            <span class="break-words p-4 w-1/5">${el.author}</span>
+        </div>
+        <hr>
         `);
     });
 }
