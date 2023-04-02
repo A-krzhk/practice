@@ -1,13 +1,13 @@
 const listDocs = document.querySelector('.table-content tbody');
 
 const renderData = (data) => {
-    data.forEach((el, i) => {
+    data.forEach(el => {
         listDocs.insertAdjacentHTML('beforeend',`
-            <tr class="cursor-pointer hover:bg-gray-300 " data-id=${el.id}>
-                <td class="p-1">${el.name}</td>
-                <td class="p-1">${el.data}</td>
-                <td class="p-1">${el.size} ${el.includeImg ? '<i class="fa-regular fa-file-image text-gray-600"></i>' : ''}</td>
-                <td class="p-1">${el.author}</td>
+            <tr class="border-solid border-b-2 border-gray-300 cursor-pointer hover:bg-sky-100 " data-id=${el.id}>
+                <td class="py-1 px-4 line-clamp-3">${el.text}</td>
+                <td class="py-1 px-4">${el.data}</td>
+                <td class="flex flex-row flex-nowrap items-center gap-1 py-1 px-4">${el.size} ${el.includeImg ? '<i class="fa-regular fa-file-image text-gray-600"></i>' : ''}</td>
+                <td class="py-1 px-4">${el.author}</td>
             </tr>
         `);
     });
@@ -31,3 +31,5 @@ const getData = (url) => {
 };
 
 getData('../database/dbase.json')
+
+
