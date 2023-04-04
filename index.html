@@ -31,11 +31,14 @@
         </div>
         <div class="flex-1 bg-gray-100 flex flex-col p-12 shadow-lg border border-gray-200 rounded-l-3xl relative">
             <div class="text-3xl p-2">Хранилище документов</div>
-            <div class="mt-6 h-12 w-full ">
-                <form class="text-center p-2 text-start">
-                    <input class="w-3/4 p-3 bg-gray-100 " type="text" name="text" placeholder="Поиск">
-                    <a href="#"><i class="fas fa-filter p-2"></i></a>
-                    <a href="#"><i class="fas fa-search"></i></a>
+            <div class="mt-6 h-12 bg-white rounded-full shadow-md w-full relative">
+                <form>
+                    <input class="w-full outline-none bg-white h-12 rounded-full pl-8 pr-28 " type="text" name="text"
+                        placeholder="Поиск">
+                    <button class="h-10 border-none absolute "><i
+                            class="fas fa-filter p-2  rounded-full hover:bg-blue-100 absolute right-14 top-2 hover:transition-all duration-300"></i></button>
+                    <button class="h-10 border-none absolute "><i
+                            class="fas fa-search p-2  rounded-full hover:bg-blue-100 absolute right-5 top-2 hover:transition-all duration-300"></i></button>
                 </form>
             </div>
             <div class="rounded-3xl mt-3 flex-1 overflow-y-auto shadow-xl flex flex-col gap-5 list-content">
