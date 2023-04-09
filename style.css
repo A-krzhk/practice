@@ -1,0 +1,13 @@
+#okno {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    padding: 0px 60px;
+}
+
+#okno:target {display: block;}
