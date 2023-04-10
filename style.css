@@ -11,12 +11,14 @@
  
 	white-space: nowrap;
 }
- .scroller::-webkit-scrollbar {
+.scroller::-webkit-scrollbar {
 	display: none;
- }
- .content {
+}
+.content {
 	max-width: calc(100vw - 20rem);
 }
 
- 
+.list-wrapper::-webkit-scrollbar {
+	display: none;
+}
 
