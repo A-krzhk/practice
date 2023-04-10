@@ -1,13 +1,32 @@
 #okno {
-    display: none;
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
-    left: 0;
+    left: 120%;
     z-index: 10;
     width: 100%;
     padding: 0px 60px;
 }
 
-#okno:target {display: block;}
+/* #okno:target {display: block;} */
+
+.scroller {
+	box-sizing: border-box;
+	overflow: hidden;
+ 
+	overflow-x: auto;
+	overflow: -moz-scrollbars-none;
+	-ms-overflow-style: none;
+	-webkit-overflow-scrolling: touch;
+	scrollbar-width: none;
+	scroll-behavior: smooth;
+ 
+	white-space: nowrap;
+}
+ .scroller::-webkit-scrollbar {
+	display: none;
+ }
+ .content {
+	max-width: calc(100vw - 20rem);
+}

@@ -14,6 +14,10 @@ const renderData = (data) => {
     });
 }
 
+// windowState - функция, которую напишет dev_Grigoriy
+const windowState = (e) => {const modal = document.querySelector("#okno")
+modal.style.left="0%"}
+
 const getData = (url) => {
     fetch(url)
         .then((response) => {
@@ -25,6 +29,11 @@ const getData = (url) => {
         })
         .then((data) => {
             renderData(data);
+
+            // Вызов функции windowState, которую добавят из dev_Grigoriy
+            for(let i = 0; i < listDocs.children.length; i++){
+                listDocs.children[i].addEventListener('click', windowState)
+            }
         })
         .catch((error) => {
             console.error(error.message);
@@ -34,3 +43,10 @@ const getData = (url) => {
 getData('../database/dbase.json')
 
 
+function myFunction1() {
+    document.getElementById('cont1').style.cssText = 'height: auto;';
+}
+
+function myFunction2() {
+    document.getElementById('cont2').style.cssText = 'height: auto;';
+}

@@ -17,30 +17,65 @@
     <title>Просмотр файлов</title>
 </head>
 
-<body class="bg-gray-50 h-fit">
+<body class="bg-gray-50 h-fit overflow-hidden">
     <div class="h-screen flex">
         <div class="h-full w-80 flex flex-col p-12">
 
-            <div class="w-full flex flex-col h-1/2">
-                <a class=" black block p-3 text-xl" href="#">Главная</a>
+            <div class="w-full flex flex-col h-1/2 ">
+                <a class=" black block p-3 text-xl hover:border-b-2 border-black transition-all duration-100 "
+                    href="#">Главная</a>
             </div>
             <div class="w-full flex flex-col h-1/2">
-                <a class=" text-center block p-3 " href="#">Теги</a>
-                <a class=" block p-3 " href="#">1</a>
+                <a class=" text-left block p-3 text-gray-700" href="#">Теги</a>
+                <ul class="block p-3 list-none ">
+                    <li
+                        class="before:inline-block before:w-3 before:h-3 before:mr-3 before:bg-green-200 before:rounded-3xl">
+                        <a href="#">Green</a>
+                    </li>
+                    <li
+                        class="before:inline-block before:w-3 before:h-3 before:mr-3 before:bg-blue-200 before:rounded-3xl">
+                        <a href="#">Blue</a>
+                    </li>
+                    <li
+                        class="before:inline-block before:w-3 before:h-3 before:mr-3 before:bg-pink-200 before:rounded-3xl">
+                        <a href="#">Pink</a>
+                    </li>
+                    <li
+                        class="before:inline-block before:w-3 before:h-3 before:mr-3 before:bg-yellow-200 before:rounded-3xl">
+                        <a href="#">Yellow</a>
+                    </li>
+                    <li
+                        class="before:inline-block before:w-3 before:h-3 before:mr-3 before:bg-purple-200 before:rounded-3xl">
+                        <a href="#">Purple</a>
+                    </li>
+                    <li
+                        class="before:inline-block before:w-3 before:h-3 before:mr-3 before:bg-lime-200 before:rounded-3xl">
+                        <a href="#">Lime</a>
+                    </li>
+                    <li
+                        class="before:inline-block before:w-3 before:h-3 before:mr-3 before:bg-orange-200 before:rounded-3xl">
+                        <a href="#">Orange</a>
+                    </li>
+                    <li
+                        class="before:inline-block before:w-3 before:h-3 before:mr-3 before:bg-gray-200 before:rounded-3xl">
+                        <a href="#">All tags</a>
+                    </li>
+                </ul>
             </div>
         </div>
         <div class="flex-1 bg-gray-100 flex flex-col p-12 shadow-lg border border-gray-200 rounded-l-3xl relative">
             <div class="text-3xl p-2">Хранилище документов</div>
             <div class="mt-6 h-12 bg-white rounded-full shadow-md w-full relative">
-                <form>
-                    <input class="w-full outline-none bg-white h-12 rounded-full pl-8 pr-28 " type="text" name="text"
-                        placeholder="Поиск">
-                    <button class="h-10 border-none absolute "><i
-                            class="fas fa-filter p-2  rounded-full hover:bg-blue-100 absolute right-14 top-2 hover:transition-all duration-300"></i></button>
-                    <button class="h-10 border-none absolute "><i
-                            class="fas fa-search p-2  rounded-full hover:bg-blue-100 absolute right-5 top-2 hover:transition-all duration-300"></i></button>
-                </form>
+
+                <input class="w-full outline-none bg-white h-12 rounded-full pl-8 pr-28 " type="text" name="text"
+                    placeholder="Поиск">
+                <button class="h-10 border-none absolute "><i
+                        class="fas fa-filter p-2  rounded-full hover:bg-blue-100 absolute right-14 top-2 hover:transition-all duration-300"></i></button>
+                <button class="h-10 border-none absolute "><i
+                        class="fas fa-search p-2  rounded-full hover:bg-blue-100 absolute right-5 top-2 hover:transition-all duration-300"></i></button>
+
             </div>
+            <div id="applied-filters" class="mt-2 h-12 w-full flex scroller content"></div>
             <div class="rounded-3xl mt-3 flex-1 overflow-y-auto shadow-xl flex flex-col gap-5 list-content">
                 <div
                     class="px-4 sticky top-0 shadow-sm h-fit py-4 font-medium cursor-pointer text-left text-sm w-full bg-blue-100 rounded-t-3xl flex flex-nowrap justify-between items-center gap-1">
@@ -49,40 +84,45 @@
                     <span class="w-1/5 px-4 hover:underline underline-offset-4">РАЗМЕР</span>
                     <span class="w-1/5 px-4 hover:underline underline-offset-4">АВТОР</span>
                 </div>
-                <div class="mt-3 flex flex-col">
+                <div class="flex flex-col">
                     <div class="rounded-l-3xl bg-white w-10/11 transition-all duration-300" id="okno">
-                        <div class="flex text-2xl">
+                        <div class="flex text-2xl pt-12">
                             <a href="" class="pr-2"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
                             <p>Название: Название файла</p>
                         </div>
                         <div class="flex pl-8 pt-1 text-sm text-gray-500">
                             <p>30.06.2063</p>
                         </div>
-                        <div class="grid grid-cols-3 mt-8">
-                            <p>Автор: Копейкин Станислав Антонович</p>
-                            <p>Размер: 200GB</p>
-                            <p>Язык: Крутой</p>
+                        <div class="grid grid-cols-3 mt-8 gap-x-4 justify-start">
+                            <p>
+                                Автор: <br/>
+                                Копейкин Станислав Антонович</p>
+                            <p>
+                                Размер: <br/>
+                                200GB</p>
+                            <p>
+                                Язык: <br/>
+                                Крутой</p>
                         </div>
-                        <div class="mt-10 border-gray-500 border-4 rounded-xl h-72 overflow-hidden">
+                        <div class="mt-10 shadow-lg border border-gray-200 rounded-3xl h-72 overflow-hidden" id="cont1">
                             <div class="flex justify-between">
-                                <h2 class="flex font-bold pt-4 pl-8 pb-6">Описание</h2>
-                                <a href="" class="text-3xl pt-2 pr-2"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
+                                <h2 class="flex font-bold pt-4 pl-8">Описание</h2>
+                                <a onclick="myFunction1()" class="text-3xl p-3"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
                             </div>
-                            <p class="flex px-8">
+                            <p class="flex px-8 pt-6">
                                 Как принято считать, стремящиеся вытеснить традиционное производство, нанотехнологии формируют глобальную экономическую сеть и при этом — подвергнуты целой серии независимых исследований. В своём стремлении повысить качество жизни, они забывают, что синтетическое тестирование однозначно определяет каждого участника как способного принимать собственные решения касаемо форм воздействия. Являясь всего лишь частью общей картины, представители современных социальных резервов преданы социально-демократической анафеме. Не следует, однако, забывать, что существующая теория прекрасно подходит для реализации поставленных обществом задач. Принимая во внимание показатели успешности, новая модель организационной деятельности, в своём классическом представлении, допускает внедрение экономической целесообразности принимаемых решений. Следует отметить, что дальнейшее развитие различных форм деятельности влечет за собой процесс внедрения и модернизации прогресса профессионального сообщества. Разнообразный и богатый опыт говорит нам, что понимание сути ресурсосберегающих технологий, в своём классическом представлении, допускает внедрение системы массового участия. С другой стороны, убеждённость некоторых оппонентов выявляет срочную потребность поэтапного и последовательного развития общества. В частности, экономическая повестка сегодняшнего дня требует анализа экспериментов, поражающих по своей масштабности и грандиозности.
                             </p>
                         </div>
-                        <div class="mt-10 border-gray-500 border-4 rounded-xl h-72 overflow-hidden">
+                        <div class="mt-10 shadow-lg border border-gray-200 rounded-3xl h-72 overflow-hidden" id="cont2">
                             <div class="flex justify-between">
-                                <h2 class="flex font-bold pt-4 pl-8 pb-6">Перевод</h2>
-                            <a href="" class="text-3xl pt-2 pr-2"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
+                                <h2 class="flex font-bold pt-4 pl-8">Перевод</h2>
+                            <a onclick="myFunction2()" class="text-3xl p-3"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
                             </div>
-                            <p class="flex px-8">
+                            <p class="flex px-8 pt-6">
                                 Как принято считать, стремящиеся вытеснить традиционное производство, нанотехнологии формируют глобальную экономическую сеть и при этом — подвергнуты целой серии независимых исследований. В своём стремлении повысить качество жизни, они забывают, что синтетическое тестирование однозначно определяет каждого участника как способного принимать собственные решения касаемо форм воздействия. Являясь всего лишь частью общей картины, представители современных социальных резервов преданы социально-демократической анафеме. Не следует, однако, забывать, что существующая теория прекрасно подходит для реализации поставленных обществом задач. Принимая во внимание показатели успешности, новая модель организационной деятельности, в своём классическом представлении, допускает внедрение экономической целесообразности принимаемых решений. Следует отметить, что дальнейшее развитие различных форм деятельности влечет за собой процесс внедрения и модернизации прогресса профессионального сообщества. Разнообразный и богатый опыт говорит нам, что понимание сути ресурсосберегающих технологий, в своём классическом представлении, допускает внедрение системы массового участия. С другой стороны, убеждённость некоторых оппонентов выявляет срочную потребность поэтапного и последовательного развития общества. В частности, экономическая повестка сегодняшнего дня требует анализа экспериментов, поражающих по своей масштабности и грандиозности.
                             </p>
                         </div>
                     </div>
-                    <a href="#okno" class="mt-1 mb-1 pt-2 pb-2 bg-white rounded-lg">Открыть окно</a>
                 </div>
             </div>
         </div>
